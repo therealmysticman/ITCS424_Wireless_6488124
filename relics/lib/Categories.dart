@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:relics/ToyPriceCategories.dart';
+
+import 'CartIcon.dart';
+import 'Dashboard.dart';
+import 'Home.dart';
+import 'ToyList.dart'; // Import the ToyList screen
 import 'ToyManufacturer.dart';
 import 'ToyTypeCategories.dart';
 import 'ToyYearCategories.dart';
-import 'ToyList.dart'; // Import the ToyList screen
-import 'Home.dart';
 
 class Categories extends StatelessWidget {
   @override
@@ -12,101 +15,113 @@ class Categories extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Categories'),
+        actions: [
+          CartIcon(), // Include the CartIcon widget here
+        ],
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            SizedBox(height: 20), // Spacer between buttons
-            // Toy Types Button
-            Container(
-              width: 200, // Set the width of the button
-              height: 50, // Set the height of the button
-              decoration: BoxDecoration(
-                color: Color.fromARGB(255, 132, 83, 222), // Set the background color of the button
-                borderRadius: BorderRadius.circular(12), // Set rounded corners
-              ),
-              child: TextButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => ToyTypeCategories()),
-                  );
-                },
-                child: Text(
-                  'Toy Types',
-                  style: TextStyle(fontSize: 16, color: Colors.white),
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/imagebg.jpg"), // Replace "imagebg.jpeg" with your actual image file
+            fit: BoxFit.cover,
+            colorFilter: ColorFilter.mode(Colors.black.withOpacity(0.3), BlendMode.dstATop), // Adjust opacity here (0.5 means 50% opacity)
+          ),
+        ),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SizedBox(height: 20), // Spacer between buttons
+              // Toy Types Button
+              Container(
+                width: 200, // Set the width of the button
+                height: 50, // Set the height of the button
+                decoration: BoxDecoration(
+                  color: Color.fromARGB(255, 132, 83, 222), // Set the background color of the button
+                  borderRadius: BorderRadius.circular(12), // Set rounded corners
+                ),
+                child: TextButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ToyTypeCategories()),
+                    );
+                  },
+                  child: Text(
+                    'Toy Types',
+                    style: TextStyle(fontSize: 16, color: Colors.white),
+                  ),
                 ),
               ),
-            ),
-            SizedBox(height: 20), // Spacer between buttons
-            // Toy Release Year Button
-            Container(
-              width: 200, // Set the width of the button
-              height: 50, // Set the height of the button
-              decoration: BoxDecoration(
-               color: Color.fromARGB(255, 132, 83, 222), // Set the background color of the button
-                borderRadius: BorderRadius.circular(12), // Set rounded corners
-              ),
-              child: TextButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => ToyYearCategories()),
-                  );
-                },
-                child: Text(
-                  'Toy Release Year',
-                  style: TextStyle(fontSize: 16, color: Colors.white),
+              SizedBox(height: 20), // Spacer between buttons
+              // Toy Release Year Button
+              Container(
+                width: 200, // Set the width of the button
+                height: 50, // Set the height of the button
+                decoration: BoxDecoration(
+                  color: Color.fromARGB(255, 132, 83, 222), // Set the background color of the button
+                  borderRadius: BorderRadius.circular(12), // Set rounded corners
+                ),
+                child: TextButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ToyYearCategories()),
+                    );
+                  },
+                  child: Text(
+                    'Toy Release Year',
+                    style: TextStyle(fontSize: 16, color: Colors.white),
+                  ),
                 ),
               ),
-            ),
-            SizedBox(height: 20), // Spacer between buttons
-            // Toy Manufacturer Button
-            Container(
-              width: 200, // Set the width of the button
-              height: 50, // Set the height of the button
-              decoration: BoxDecoration(
-                color: Color.fromARGB(255, 132, 83, 222), // Set the background color of the button
-                borderRadius: BorderRadius.circular(12), // Set rounded corners
-              ),
-              child: TextButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => ToyManufacturer()),
-                  );
-                },
-                child: Text(
-                  'Toy Manufacturer',
-                  style: TextStyle(fontSize: 16, color: Colors.white),
+              SizedBox(height: 20), // Spacer between buttons
+              // Toy Manufacturer Button
+              Container(
+                width: 200, // Set the width of the button
+                height: 50, // Set the height of the button
+                decoration: BoxDecoration(
+                  color: Color.fromARGB(255, 132, 83, 222), // Set the background color of the button
+                  borderRadius: BorderRadius.circular(12), // Set rounded corners
+                ),
+                child: TextButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ToyManufacturer()),
+                    );
+                  },
+                  child: Text(
+                    'Toy Manufacturer',
+                    style: TextStyle(fontSize: 16, color: Colors.white),
+                  ),
                 ),
               ),
-            ),
-            SizedBox(height: 20), // Spacer between buttons
-            // Toy List Button
-            Container(
-              width: 200, // Set the width of the button
-              height: 50, // Set the height of the button
-              decoration: BoxDecoration(
-                color: Color.fromARGB(255, 132, 83, 222), // Set the background color of the button
-                borderRadius: BorderRadius.circular(12), // Set rounded corners
-              ),
-              child: TextButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => ToyPriceCategories()),
-                  );
-                },
-                child: Text(
-                  'Toys Price',
-                  style: TextStyle(fontSize: 16, color: Colors.white),
+              SizedBox(height: 20), // Spacer between buttons
+              // Toy List Button
+              Container(
+                width: 200, // Set the width of the button
+                height: 50, // Set the height of the button
+                decoration: BoxDecoration(
+                  color: Color.fromARGB(255, 132, 83, 222), // Set the background color of the button
+                  borderRadius: BorderRadius.circular(12), // Set rounded corners
+                ),
+                child: TextButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ToyPriceCategories()),
+                    );
+                  },
+                  child: Text(
+                    'Toys Price',
+                    style: TextStyle(fontSize: 16, color: Colors.white),
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -152,6 +167,13 @@ class Categories extends StatelessWidget {
               );
               break;
             // Add navigation for other items if needed
+            case 3:
+              break;
+            case 4:
+            Navigator.push(context, 
+            MaterialPageRoute(builder: (context) => Dashboard())
+            );
+              break;
           }
         },
       ),
